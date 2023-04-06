@@ -8,13 +8,13 @@ class squareInterface implements interfaceTest{
      public double area() {
          System.out.println("Enter the length of the side");
          int side = sc.nextInt();
-         return side*side;
+         return side * side;
      }
 
     @Override
     public double surfaceArea() {
         System.out.println("Enter the length of the side");
         int side = sc.nextInt();
-        return side*4;
+        return side * 4;
     }
 }
