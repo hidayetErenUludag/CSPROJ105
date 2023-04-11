@@ -1,9 +1,10 @@
 package CsHomework3;
 
 public class carPark {
+    private double dayCount;
     private final double dailyAmount = 300;
     private final Vehicle[] parkingSlot;
-    private final String[] Reservations;
+    private  String[] Reservations;
 
     public carPark(String name, int space) {
         parkingSlot = new Vehicle[space];
@@ -26,11 +27,10 @@ public class carPark {
     }
 
     public void makeReservation(Vehicle vehicle, Person person, Reservation dayCount) {
-        String[] reservations = new String[10];
-
+        this.dayCount = dayCount.getDayCount();
         int whereToPlace = -1;
-        for (int i = 0; i < reservations.length; i++) {
-            if (reservations[i] == null) {
+        for (int i = 0; i < Reservations.length; i++) {
+            if (Reservations[i] == null) {
                 whereToPlace = i;
                 break;
             }
@@ -48,29 +48,23 @@ public class carPark {
                         + "Vehicle:[" + vehicle.getBrand() + ", " + vehicle.getModel() + ", " + vehicle.getType() + "]";
             }
 
-            reservations[whereToPlace] = reservation; // Place the reservation in the available slot
+            Reservations[whereToPlace] = reservation; // Update the Reservations array with the new reservation
 
-            // Print out the reservations
-            System.out.println("Reservations:");
-            for (String i : reservations) {
-                if (i != null) {
-                    System.out.println(i);
-                }
-            }
-        } else {
-            System.out.println("No available slot for reservation."); // Handle the case when no available slot is found
+
+        }
+        else {
+            System.out.println("No available slot for reservation.");
         }
     }
+
+
+
+
     public double computeTotalAmount(){
         double totalAmount = 0.0;
         for (String reservation: Reservations){
             if (reservation != null){
-                String[] parts = reservation.split(", ");
-                String[] daysPart = parts[0].split(" ");
-                String[] vehiclePart = parts[2].split("[:\\[,]");
-
-                int days = Integer.parseInt(daysPart[1]);
-                double amount = this.dailyAmount * days;
+                double amount = this.dailyAmount * dayCount;
                 totalAmount += amount;
             }
         }
@@ -78,7 +72,9 @@ public class carPark {
     }
     public void printRentedVehicles(){
         for(String i:Reservations){
-            System.out.println(i);
+            if (Reservations != null) {
+                System.out.println(i);
+            }
         }
     }
 }
