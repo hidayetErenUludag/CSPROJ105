@@ -7,4 +7,8 @@ public class Person {
         this.name = Name;
         this.driverLicence = DriverLicence;
     }
+
+    public String getName() {
+        return name;
+    }
 }
