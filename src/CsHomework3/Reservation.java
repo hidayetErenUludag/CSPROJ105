@@ -7,8 +7,8 @@ public class Reservation {
     private final int dayCount;;
     public Reservation(int dayCount){
         Random reservationNum = new Random();
-        reservationNum.nextInt(1000,9999);
-        this.reservationNumber = String.valueOf(reservationNum);
+        int number = reservationNum.nextInt(1000,9999);
+        this.reservationNumber = String.valueOf(number);
         this.dayCount = dayCount;
     }
 

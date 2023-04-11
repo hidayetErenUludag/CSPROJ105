@@ -1,6 +1,7 @@
 package CsHomework3;
 
 public class carPark {
+    private final double dailyAmount = 300;
     private final Vehicle[] parkingSlot;
     private final String[] Reservations;
 
@@ -58,6 +59,26 @@ public class carPark {
             }
         } else {
             System.out.println("No available slot for reservation."); // Handle the case when no available slot is found
+        }
+    }
+    public double computeTotalAmount(){
+        double totalAmount = 0.0;
+        for (String reservation: Reservations){
+            if (reservation != null){
+                String[] parts = reservation.split(", ");
+                String[] daysPart = parts[0].split(" ");
+                String[] vehiclePart = parts[2].split("[:\\[,]");
+
+                int days = Integer.parseInt(daysPart[1]);
+                double amount = this.dailyAmount * days;
+                totalAmount += amount;
+            }
+        }
+        return totalAmount;
+    }
+    public void printRentedVehicles(){
+        for(String i:Reservations){
+            System.out.println(i);
         }
     }
 }

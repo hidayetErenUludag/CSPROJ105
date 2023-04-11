@@ -21,8 +21,8 @@ public class carparkTest {
         motors[3] = new motorCycle("78 SS 28", "Economy", "Automatic", "SYM", "Jet 14 125", 2016, "Scooter");
 
         Person eren = new Person("Eren Uludağ","IDK I was supposed to write here ");
-        Person Mehmet = new Person("Eren Uludağ","IDK I was supposed to write here ");
-        Person Ahmet = new Person("Eren Uludağ","IDK I was supposed to write here ");
+        Person Mehmet = new Person("Ahmet Yesil","IDK I was supposed to write here ");
+        Person Ahmet = new Person("Ali Kalemdaroğullarındamışçasınagiller","IDK I was supposed to write here ");
 
 
 
@@ -38,6 +38,9 @@ public class carparkTest {
         test.makeReservation(cars[1], eren, new Reservation(5));
         test.makeReservation(motors[0], eren, new Reservation(5));
         test.makeReservation(cars[5], eren, new Reservation(5));
+        System.out.println("Total Amount="+ test.computeTotalAmount() );
+        System.out.println("--------- RENTED VEHICLES ---------");
+        test.printRentedVehicles();
 
     }
 }
