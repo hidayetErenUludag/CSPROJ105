@@ -36,8 +36,11 @@ public class carparkTest {
         System.out.println(test.addVehicle(cars[0]));
         System.out.println(test.addVehicle(motors[0]));
         test.makeReservation(cars[1], eren, new Reservation(5));
-        test.makeReservation(motors[0], eren, new Reservation(4));
-        test.makeReservation(cars[5], eren, new Reservation(3));
+        test.makeReservation(motors[0], Mehmet, new Reservation(4));
+        test.makeReservation(cars[3], eren, new Reservation(3));
+        test.makeReservation(cars[5], Ahmet, new Reservation(3));
+        test.makeReservation(cars[7], eren, new Reservation(3));
+        test.makeReservation(cars[0], eren, new Reservation(3));
         System.out.println("Total Amount="+test.computeTotalAmount());
         System.out.println("--------- RENTED VEHICLES ---------");
         test.printRentedVehicles();

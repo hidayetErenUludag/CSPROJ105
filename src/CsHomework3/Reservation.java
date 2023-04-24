@@ -4,7 +4,8 @@ import java.util.Random;
 
 public class Reservation {
     private final String reservationNumber;
-    private final int dayCount;;
+    private final int dayCount;
+
     public Reservation(int dayCount){
         Random reservationNum = new Random();
         int number = reservationNum.nextInt(1000,9999);

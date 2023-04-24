@@ -4,7 +4,7 @@ public class carPark {
     private double dayCount;
     private final double dailyAmount = 300;
     private final Vehicle[] parkingSlot;
-    private  String[] Reservations;
+    private final String[] Reservations;
 
     public carPark(String name, int space) {
         parkingSlot = new Vehicle[space];
@@ -41,7 +41,7 @@ public class carPark {
             if (vehicle instanceof Car) {
                 reservation = "Res:[" + dayCount.getReservationNumber() + ", " + dayCount.getDayCount() + " days], "
                         + "Driver:[" + person.getName() + "], "
-                        + "Vehicle:[" + vehicle.getBrand() + ", " + vehicle.getModel() + ", " + ((Car) vehicle).getSeatCount() + " seats, " + vehicle.getType() + "]";
+                        + "Vehicle:[" + vehicle.getBrand() + ", " + vehicle.getModel() + ", " + vehicle.getSeatCount() + " seats, " + vehicle.getType() + "]";
             } else {
                 reservation = "Res:[" + dayCount.getReservationNumber() + ", " + dayCount.getDayCount() + " days], "
                         + "Driver:[" + person.getName() + "], "
