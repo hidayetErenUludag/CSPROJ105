@@ -1,0 +1,10 @@
+CS201;Data Structures and Algorithms;5
+CS220;Database Management Systems;4
+CS301;Artificial Intelligence;5
+CS350;Operating Systems;4
+CS410;Software Engineering;5
+CS480;Computer Graphics;4
+CS520;Machine Learning;5
+CS600;Research Methods in Computer Science;3
+CS650;Natural Language Processing;4
+CS700;Distributed Systems;5
